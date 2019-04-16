@@ -86,6 +86,15 @@ public class RunTest {
         return classes;
     }
 
+    /**
+     * Recursive method used to find all classes in a given directory and subdirs.
+     *
+     * @param directory   The base directory
+     * @param packageName The package name for classes founded inside the base directory (initially empty for recursion)
+     * @param pkn The base name of package
+     * @return The classes List
+     * @throws ClassNotFoundException
+     */
 
     private static List<Class> findClasses_mod(File directory, String packageName, String pkn) throws ClassNotFoundException {
 
