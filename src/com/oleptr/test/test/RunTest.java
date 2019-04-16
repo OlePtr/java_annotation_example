@@ -62,10 +62,7 @@ public class RunTest {
      */
     private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
 
-        String pkn = "";
         List<Class> classes = new ArrayList<Class>();
-        boolean ife = directory.exists();
-        //System.out.println(ife);
         if (!directory.exists()) {
             return classes;
         }
@@ -77,14 +74,11 @@ public class RunTest {
             } else if (file.getName().endsWith(".class")) {
                 String fn = file.getName().substring(0, file.getName().length() - 6);
                 String clname = packageName + '.' + fn;
-                //String clname = pkn + '.' + fn;
-                // clname = clname.substring(1);
                 classes.add(Class.forName(clname));
 
             } else if (file.getName().endsWith(".java") & !file.getName().startsWith("Test")) {
                 String fn = file.getName().substring(0, file.getName().length() - 5);
                 String clname = packageName + '.' + fn;
-                //clname = clname.substring(1);
                 classes.add(Class.forName(clname));
             }
 
