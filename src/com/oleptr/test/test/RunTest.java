@@ -32,8 +32,8 @@ public class RunTest {
             throws ClassNotFoundException, IOException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
-        System.out.println(File.separator);
-        System.out.println(File.separatorChar);
+       // System.out.println(File.separator);
+       // System.out.println(File.separatorChar);
 
         //String path = packageName.replace('.', File.separatorChar);
         String path = packageName.replace('.', '/');
@@ -100,7 +100,7 @@ public class RunTest {
         firstdir.replace(".", "");
         directory = new File(directory.getPath());
         File[] files = directory.listFiles();
-        String teststr = "";
+        //String teststr = "";
         for (File file : files) {
             if (directory.getPath().endsWith(firstdir)) {
                 if (pkn.length() > 1) {
@@ -211,13 +211,13 @@ public class RunTest {
                         System.out.println("  Field annotation processed -> " + field.getName() + " = " + field.getInt(object) + "");
                     }
                     // if enabled = true (default)
-                    try {
-                        System.out.printf("%s - com.oleptr.test '%s' - passed %n", ++count, field.getName());
-                        passed++;
-                    } catch (Throwable ex) {
-                        System.out.printf("%s - com.oleptr.test '%s' - failed: %s %n", ++count, field.getName(), ex.getCause());
-                        failed++;
-                    }
+//                    try {
+//                        System.out.printf("%s - com.oleptr.test '%s' - passed %n", ++count, field.getName());
+//                        passed++;
+//                    } catch (Throwable ex) {
+//                        System.out.printf("%s - com.oleptr.test '%s' - failed: %s %n", ++count, field.getName(), ex.getCause());
+//                        failed++;
+//                    }
                 }
 
             }
